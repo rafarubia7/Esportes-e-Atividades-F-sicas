@@ -1,0 +1,289 @@
+:root {
+    --primary-color: #E5B800;     /* Dourado mais sofisticado */
+    --secondary-color: #0F1112;   /* Preto suave */
+    --accent-color: #CCA000;      /* Dourado mais escuro para acentos */
+    --light-color: #E8E9EA;       /* Cinza claro refinado */
+    --dark-color: #F8F9FA;        /* Branco suave para texto */
+    --background-gradient: linear-gradient(135deg, #141619 0%, #1A1D21 100%);
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: var(--background-gradient);
+    min-height: 100vh;
+    color: var(--dark-color);
+    line-height: 1.6;
+}
+
+header {
+    background: linear-gradient(to right, #0F1112, #141619);
+    padding: 2.5rem 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    border-bottom: 3px solid var(--primary-color);
+}
+
+.site-title {
+    color: var(--primary-color);
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 0.75rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.site-subtitle {
+    color: var(--light-color);
+    text-align: center;
+    font-size: 1.5rem;
+    opacity: 0.95;
+    font-weight: 300;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2.5rem;
+    color: #F8F9FA;
+    padding: 3rem 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.sport-card {
+    background: linear-gradient(145deg, #1A1D21, #141619);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.4s ease;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(229, 184, 0, 0.1);
+}
+
+.sport-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(229, 184, 0, 0.15);
+    border-color: rgba(229, 184, 0, 0.3);
+}
+
+.card-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.sport-card:hover .card-image {
+    transform: scale(1.05);
+}
+
+.card-content {
+    padding: 2rem;
+}
+
+.card-title {
+    color: var(--primary-color);
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.card-subtitle {
+    color: var(--light-color);
+    font-size: 1.1rem;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+    font-weight: 300;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    color: #E8E9EA;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 17, 18, 0.97);
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background: linear-gradient(145deg, #1A1D21, #141619);
+    width: 90%;
+    max-width: 800px;
+    margin: 5rem auto;
+    padding: 2.5rem;
+    border-radius: 15px;
+    position: relative;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(229, 184, 0, 0.2);
+}
+
+.close {
+    position: absolute;
+    right: 1.75rem;
+    top: 1.25rem;
+    font-size: 2rem;
+    cursor: pointer;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+    opacity: 0.8;
+}
+
+.close:hover {
+    color: var(--accent-color);
+    opacity: 1;
+}
+
+.stats-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1.5rem;
+    margin: 2rem 0;
+}
+
+.stat-card {
+    background: rgba(26, 29, 33, 0.8);
+    padding: 1.75rem;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(229, 184, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-3px);
+    border-color: rgba(229, 184, 0, 0.2);
+}
+
+.stat-number {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.stat-label {
+    font-size: 1rem;
+    color: var(--light-color);
+    opacity: 0.9;
+    font-weight: 300;
+    letter-spacing: 0.5px;
+}
+
+.footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 2rem 0;
+    margin-top: auto;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    text-align: center;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
+
+.footer a {
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer a:hover {
+    color: #ffd700;
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    background-color: #333;
+    border-radius: 25px;
+    margin-top: 0.5rem;
+}
+
+.social-link:hover {
+    background-color: #444;
+}
+
+.footer-divider {
+    width: 50px;
+    height: 2px;
+    background-color: #ffd700;
+    margin: 0.5rem 0;
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        padding: 1.5rem;
+        gap: 2rem;
+    }
+    
+    .site-title {
+        font-size: 2.5rem;
+    }
+    
+    .site-subtitle {
+        font-size: 1.2rem;
+    }
+
+    .card-content {
+        padding: 1.5rem;
+    }
+}
+::-webkit-scrollbar-track {
+    background: #141619;
+    border-radius: 6px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    border-radius: 6px;
+    border: 3px solid #141619;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #F2C200, #DDB100);
+}
+
+/* Estilização da barra de rolagem para Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: var(--primary-color) #141619;
+}
+
+/* Estilização específica para o modal */
+.modal-content::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    border: 2px solid #141619;
+}
